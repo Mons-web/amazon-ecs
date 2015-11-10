@@ -109,6 +109,7 @@ module Amazon
       self.send_request(opts)
     end
 
+
     # Search a browse node by BrowseNodeId
     def self.browse_node_lookup(browse_node_id, opts = {})
       opts[:operation] = 'BrowseNodeLookup'
@@ -116,6 +117,16 @@ module Amazon
 
       self.send_request(opts)
     end
+
+
+    # Create cart
+    def self.cart_create(opts = {})
+      opts[:operation] = 'CartCreate'
+      opts[:service] = "AWSECommerceService"
+
+      self.send_request(opts)
+    end
+
 
     # Generic send request to ECS REST service. You have to specify the :operation parameter.
     def self.send_request(opts)
